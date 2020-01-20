@@ -1,0 +1,6 @@
+1、	下载英文维基百科语料库，https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2，下载的是xml压缩后的最新数据
+    （下载时间为2020年1月10号），文件大小15.6G。
+2、	将xml的wiki数据转换为text格式。利用gensim里的维基百科处理类WikiCorpus，通过get_texts将维基里的每篇文章转换位1行text文本，并且去掉了标点
+     符号等内容。共处理四百多万的文章，用时五个半小时，可以得到text格式的英文维基百科数据wiki.en.txt。
+3、	训练word2vec模型，使用gensim中的python word2vec版本，用时七个小时左右，可以得到一个gensim中默认格式的word2vec model和一个原始c版本
+      word2vec的vector格式的模型wiki.en.text.vector。
